@@ -8,13 +8,10 @@
         <link rel="stylesheet" href="./flip/flip.min.alt2.css" />
     </head>
     <body>
-
-        <!-- START OF FLIP EXAMPLE PRESET -->
-        
-        <style>
+                <style>
             .tick {
                 padding-bottom: 1em;
-                font-size: 1rem;
+  
                 font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans,
                     Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
             }
@@ -29,9 +26,13 @@
                 text-align: center;
             }
         </style>
-<div class="bg"></div>
+    <main class="page">
+        <section class="top">
+        <div class="logo"></div>
+        </section>
+
+        <section class="bottom">
         <div class="countdown-container">
-            
             <div class="tick" data-did-init="handleTickInit">
                 <div
                     data-repeat="true"
@@ -51,7 +52,15 @@
                     </div>
                 </div>
             </div>
+
         </div>
+  
+        </section>
+  </main>
+
+
+
+
         <script>
             function handleTickInit(tick) {
 
@@ -90,7 +99,7 @@
 
         <!-- END OF FLIP EXAMPLE PRESET -->
 
-        <script src="../flip/flip.min.js"></script>
+        <script src="./flip/flip.min.js"></script>
         
     </body>
 </html>

@@ -1,40 +1,51 @@
-html, body { height: 100%; margin: 0; background: #fff; } 
-
-.bg {
-  position: fixed;
-  top: 0; right: 0; bottom: 20em; left: 0;
-  background: url("../assets/Logo_IC_Stockholm_2026_Horisontal_Original.svg")
-              center / contain no-repeat;
-  opacity: 1;
-  pointer-events: none;
-  z-index: 0;
-  size: 00% 50%;
-
-
+html, body {
+  height: 100%;
+  margin: 0;
+  background: #fff;
 }
 
+.page {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 2fr 1fr; /* ~67% / 33% */
+}
 
+/* ÖVRE: logga centrerad horisontellt, “ankrad” i botten */
+.top {
+  display: flex;
+  justify-content: center;   /* centrerad i sidled */
+  align-items: flex-end;     /* align mot sektionens nedre kant */
+  padding: clamp(12px, 2vh, 24px);
+  box-sizing: border-box;
+}
+
+/* Logo fyller uppåt inom top-sektionen */
+.logo {
+  width: min(92vw, 1100px);
+  height: 100%;
+  background: url("../assets/Logo_IC_Stockholm_2026_Horisontal_Original.svg")
+              center bottom / contain no-repeat;
+}
+
+/* NEDRE: countdown centrerad horisontellt, “ankrad” i toppen */
+.bottom {
+  display: flex;
+  justify-content: center;  /* centrerad i sidled */
+  align-items: flex-start;  /* align mot sektionens övre kant */
+  padding: clamp(12px, 2vh, 24px);
+  box-sizing: border-box;
+}
 
 .countdown-container {
-  position: fixed;
-  top: 75%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  width: 70%;          /* 80 % av skärmens bredd */
-
-  display: display-internal;  /* flex; */
+  width: min(80vw, 1200px);
+  display: flex;
   justify-content: center;
-
-  z-index: 1;
 }
 
-/* Viktigt: se till att ditt innehåll hamnar ovanpå */
-.tick, .wrap, .overlay {
-  position: relative;
-  z-index: 1;
+/* valfritt: finjustera storlek på tick på olika skärmar */
+.tick {
+  font-size: clamp(2.2rem, 9vh, 4.8rem);
 }
-
 
 .tick {
 	box-sizing: border-box;
